@@ -11,7 +11,8 @@ function CategoryGridTitle( {color, title, whenPressExecute} ){
                        onPress={whenPressExecute}
             >
                 <View style={
-                            [styles.innerView, {backgroundColor: color}]                        }>
+                            [styles.innerView, {backgroundColor: color}]
+                }>
                     <Text style={styles.title}> {title} </Text>
                 </View>
             </Pressable>
