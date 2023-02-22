@@ -1,14 +1,14 @@
 import { View, Text, Pressable, StyleSheet, Platform} from 'react-native';
 
-function CategoryGridTitle( {color, title, whenPressExecute} ){
+function CategoryGridTitle({color, title, whenPressExecute}) {
 
-    return(
+    return (
         <View style={styles.outerView}>
             <Pressable android_ripple={{color: '#ccc'}}
-                       style={ ( {pressed} ) => {
+                    style={ ( {pressed} ) => {
                         [styles.pressableView, pressed ? styles.pressedButton : null]
                        }}
-                       onPress={whenPressExecute}
+                    onPress={whenPressExecute}
             >
                 <View style={
                             [styles.innerView, {backgroundColor: color}]
@@ -34,8 +34,8 @@ const styles = StyleSheet.create({
         shadowOffset: {width:0, height:2},
         shadowRadius: 8,
         overflow: Platform.OS === 'android' ? 'hidden' : 'visible'
-
     },
+
     innerView:{
         flex: 1,
         padding: 16,
@@ -43,12 +43,15 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 18,
     },
+
     pressableView:{
         flex: 1,
-       },
+    },
+
     pressedButton:{
         opacity: 0.5
     },
+    
     title:{
         fontWeight: 'bold',
         fontSize: 18
