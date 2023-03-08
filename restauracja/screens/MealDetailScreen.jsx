@@ -7,19 +7,37 @@ const MealDetailScreen = (props) => {
     const selectedMeal = MEALS.find(meal => meal.id === mealId)
 
     return (
-        <View>
-            <Image
-            <MealDetails 
-                duration={selectedMeal.duration}
-                affordability={selectedMeal.affordability}
-                complexity={selectedMeal.complexity}
-            />
-        </View>
+        <>
+            <View>
+                <Image source={{uri:selectedMeal.imageUrl}} style={styles.image}/>
+                <MealDetails
+                    duration={selectedMeal.duration}
+                    affordability={selectedMeal.affordability}
+                    complexity={selectedMeal.complexity}
+                />
+            </View>
+
+            <Text>Ingredents</Text>
+            {
+                selectedMeal.ingredients.map((ingredient) => (
+                     <Text key={ingredient}> {ingredient} </Text>
+                ))
+            }
+            <Text>Steps</Text>
+            {
+                selectedMeal.steps.map((step) => (
+                     <Text key={step}> {step} </Text>
+                ))
+            }
+        </>
     )
 };
 
 export default MealDetailScreen;
 
 const styles = StyleSheet.create({
-
-})
+    image: {
+        width: "100%",
+        height: 200
+    }
+});

@@ -29,13 +29,10 @@ export default function App() {
           // }}
           />
           <Stack.Screen name="MealsOverview"
-          component={MealsOverviewScreen}
-          options={{
-            title:"" //default is better
-          }}
+            component={MealsOverviewScreen}
           />
           <Stack.Screen name="MealDetails"
-                        component={MealDetailScreen}
+            component={MealDetailScreen}
           />
         </Stack.Navigator>
       </NavigationContainer>
